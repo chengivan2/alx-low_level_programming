@@ -1,16 +1,16 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main -Entry point
  *
- * Description: Prints message to stderr
+ * Description: Prints a statement to the stderr
  *
- * Return: Always 1 (Error)
+ * Return: Alaways 1 (Warning)
  */
 
 int main(void)
 {
-	fprintf(stderr,"and that piece of art is useful\" - Dora Korpar, 2015-\
-		10-19\n");
+	fprintf(stderr, "and that piece of art is useful,\" - Dora Korpar, 2015\
+			-10-19\n");
 	return (1);
 }
