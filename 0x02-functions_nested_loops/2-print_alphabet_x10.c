@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * The func - Prints the lowercase alphabet 10 times followed by a new line
+ * print_alphabet_x10 - Prints the lowercase alphabet 10x followed by new line
  */
 void print_alphabet_x10(void)
 {
