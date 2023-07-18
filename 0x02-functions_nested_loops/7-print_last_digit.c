@@ -12,10 +12,13 @@ int print_last_digit(int n)
 {
 	int last_digit;
 
-	if (n == INT_MIN) {
+	if (n == INT_MIN)
+	{
 		last_digit = 8; /* Last digit of INT_MIN is 8 */
-	} else {
-		if (n < 0) {
+	} else
+	{
+		if (n < 0)
+		{
 			n = -n;
 		}
 		last_digit = n % 10;
