@@ -1,34 +1,45 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <string.h>
-
-#define PASSWORD_LENGTH 9
 
 /**
- * main - Entry point
+ * random_character - generates a random character from a predefined char set.
  *
- * Return: Always 0
+ * Return: The randomly generated character.
  */
-int main(void)
+char random_character()
 {
-	char password[PASSWORD_LENGTH + 1];  /* +1 for null terminator */
-	int i;
+	const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMN\
+				OPQRSTUVWXYZ0123456789";
+	const int charset_length = sizeof(charset) - 1;
+	return charset[rand() % charset_length];
+}
 
+/**
+ * generate_random_password - generates a random password
+ * @length: The desired length of the password.
+ */
+void generate_random_password(int length)
+{
+	for (int i = 0; i < length; i++)
+	{
+		printf("%c", random_character());
+	}
+	printf("\n");
+}
+
+/**
+ * main - Entry point of the program.
+ *
+ * Return: Always 0.
+ */
+int main()
+{
 	srand(time(NULL));
 
-	/* Generate random password */
-	for (i = 0; i < PASSWORD_LENGTH - 1; i++)
-	{
-		password[i] = rand() % 94 + 33;  /* ASCII code range for printable characters */
-	}
+	int password_length = 10;
+	generate_random_password(password_length);
 
-	/* Generate last character to make password valid for 101-crackme */
-	password[PASSWORD_LENGTH - 1] = (char)((password[0] + password[1]) ^ 42) % 94 + 33;
-	password[PASSWORD_LENGTH] = '\0';
-
-	/* Print password */
-	printf("%s\n", password);
-
-	return (0);
+	return 0;
 }
+
