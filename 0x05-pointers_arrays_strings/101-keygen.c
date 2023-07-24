@@ -39,6 +39,7 @@ int main()
 	srand(time(NULL));
 
 	int password_length;
+
 	password_length = 10;
 	generate_random_password(password_length);
 
