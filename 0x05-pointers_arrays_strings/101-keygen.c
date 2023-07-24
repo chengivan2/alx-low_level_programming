@@ -21,7 +21,8 @@ char random_character()
  */
 void generate_random_password(int length)
 {
-	for (int i = 0; i < length; i++)
+	int i;
+	for (i = 0; i < length; i++)
 	{
 		printf("%c", random_character());
 	}
@@ -37,7 +38,8 @@ int main()
 {
 	srand(time(NULL));
 
-	int password_length = 10;
+	int password_length;
+	password_length = 10;
 	generate_random_password(password_length);
 
 	return 0;
