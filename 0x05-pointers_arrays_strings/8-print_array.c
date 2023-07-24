@@ -9,13 +9,13 @@
  */
 void print_array(int *a, int n)
 {
+	int i;
+
 	if (n <= 0 || a == NULL)
 	{
 		/* Invalid input or empty array, nothing to print */
 		return;
 	}
-
-	int i;
 
 	for (i = 0; i < n; i++)
 	{
