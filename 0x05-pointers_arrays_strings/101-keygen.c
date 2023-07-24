@@ -36,9 +36,9 @@ void generate_random_password(int length)
  */
 int main()
 {
-	srand(time(NULL));
-
 	int password_length;
+
+	srand(time(NULL));
 
 	password_length = 10;
 	generate_random_password(password_length);
