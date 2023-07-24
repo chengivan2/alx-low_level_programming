@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
-#define PASSWORD_LENGTH 6
+#define PASSWORD_LENGTH 9
 
 /**
  * main - Entry point
@@ -17,14 +18,17 @@ int main(void)
 	srand(time(NULL));
 
 	/* Generate random password */
-	for (i = 0; i < PASSWORD_LENGTH; i++)
+	for (i = 0; i < PASSWORD_LENGTH - 1; i++)
 	{
 		password[i] = rand() % 94 + 33;  /* ASCII code range for printable characters */
 	}
+
+	/* Generate last character to make password valid for 101-crackme */
+	password[PASSWORD_LENGTH - 1] = (char)((password[0] + password[1]) ^ 42) % 94 + 33;
 	password[PASSWORD_LENGTH] = '\0';
 
 	/* Print password */
 	printf("%s\n", password);
 
-	return 0;
+	return (0);
 }
