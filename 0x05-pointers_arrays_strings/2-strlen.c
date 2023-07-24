@@ -3,7 +3,7 @@
 /**
  * _strlen - Returns length of string
  *
- * @s - String to determine length
+ * @s: String to determine length
  *
  * Return: returns value of cnt
  */
