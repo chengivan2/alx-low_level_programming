@@ -15,4 +15,4 @@ void print_chessboard(char (*a)[8])
         }
         putchar('\n');
     }
-}
+
